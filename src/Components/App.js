@@ -1,13 +1,15 @@
 import '../App.css';
 import TransactionsTable from './TransactionsTable';
-import data from "../db.json"
 import { useState, useEffect } from 'react';
 
 function App() {
   const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
-    setTransactions(data.transactions);
+    fetch('http://localhost:3000/transactions')
+      .then((response) => response.json())
+      .then((data) => setTransactions(data))
+      .catch((error) => console.error('Error fetching data:', error));
   }, []);
 
   return (
