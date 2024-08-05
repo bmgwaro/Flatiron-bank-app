@@ -11,7 +11,7 @@ const InputForm = () => {
       });
     
       useEffect(() => {
-        fetch('http://localhost:3000/transactions')
+        fetch('https://bank-backed.vercel.app/transactions')
           .then((response) => response.json())
           .then((data) => setTransactions(data))
           .catch((error) => console.error('Error fetching data:', error));
@@ -33,7 +33,7 @@ const InputForm = () => {
           date: new Date(newTransaction.date).toISOString().split('T')[0]
         };
     
-        fetch('http://localhost:3000/transactions', {
+        fetch('https://bank-backed.vercel.app/transactions', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
