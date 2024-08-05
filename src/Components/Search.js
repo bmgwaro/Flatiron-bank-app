@@ -3,7 +3,7 @@ function Search({ onSearch }) {
       <div className="search">
         <input
           type="text"
-          placeholder="Search your Recent Transactions"
+          placeholder="Search Transactions"
           onChange={onSearch}
         />
       </div>
