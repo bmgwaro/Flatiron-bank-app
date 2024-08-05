@@ -40,3 +40,48 @@ tbody tr:last-of-type {
 tbody tr:hover {
   background-color: #f1f1f1;
 }
+
+
+/* form style */
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 100%;
+  margin: auto;
+}
+.form-container input {
+  flex: 1;
+  min-width: 100px;
+  padding: 10px;
+}
+.form-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+/* search style */
+.search {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
