@@ -1,6 +1,6 @@
 import '../App.css';
 import InputForm from './InputForm';
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import Search from './Search';
 import FilteredTable from './FilteredTable';
 
@@ -11,6 +11,13 @@ function App() {
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
+
+  useEffect(() => {
+    fetch('https://bank-backed.vercel.app/transactions')
+      .then((response) => response.json())
+      .then((data) => setTransactions(data))
+      .catch((error) => console.error('Error fetching data:', error));
+  }, []);
 
   const filteredTransactions = transactions.filter(transaction =>
     transaction.description.toLowerCase().includes(searchTerm.toLowerCase())

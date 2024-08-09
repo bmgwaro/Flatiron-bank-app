@@ -36,7 +36,8 @@ const InputForm = () => {
         fetch('https://bank-backed.vercel.app/transactions', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept':'application/json'
           },
           body: JSON.stringify(transaction)
         })
